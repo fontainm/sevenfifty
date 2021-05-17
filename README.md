@@ -1,4 +1,4 @@
-# sevenfifty
+# seven-fifty
 
 ## Project setup
 ```

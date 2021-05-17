@@ -1,0 +1,17 @@
+$body-bg: #222;
+$body-color: #eee;
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap-vue/src/index.scss";
+
+.textarea {
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: $body-bg;
+  color: $body-color;
+  margin: 2rem 0;
+}
+
+.progress {
+  margin-top: 2rem;
+}

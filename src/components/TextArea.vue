@@ -1,14 +1,16 @@
 <template>
-  <h1>Write 750 Words</h1>
-  <textarea ref="textarea" class="textarea" rows="8" @input="countWords" />
-  <h1>{{ wordCount }} / 750 words</h1>
-  <h2>{{ parseFloat((wordCount / 750) * 100).toFixed(1) }} %</h2>
-  <v-btn flat> Normal </v-btn>
+  <div class="container text-center">
+    <h1>Write 750 Words</h1>
+    <textarea ref="textarea" class="textarea" rows="8" @input="countWords" />
+    <h1>{{ wordCount }} / 750 words</h1>
+    <h2>{{ parseFloat((wordCount / 750) * 100).toFixed(1) }} %</h2>
+    <b-progress class="progress" :value="wordCount" :max="750" height="2rem" />
+  </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "TextArea",
 
   data() {
     return {
