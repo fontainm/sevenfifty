@@ -1,15 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Sevenfifty" />
+  <TextArea />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import TextArea from "./components/TextArea.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    TextArea,
   },
 };
 </script>
@@ -22,5 +21,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.textarea {
+  width: 90%;
+  font-size: 2rem;
 }
 </style>
