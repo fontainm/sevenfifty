@@ -1,5 +1,9 @@
 <template>
-  <TextArea />
+  <v-app>
+    <v-main>
+      <TextArea />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
@@ -7,6 +11,7 @@ import TextArea from "./components/TextArea.vue";
 
 export default {
   name: "App",
+
   components: {
     TextArea,
   },
