@@ -1,10 +1,29 @@
 <template>
-  <div class="container text-center">
-    <h1>Write 750 Words</h1>
-    <textarea ref="textarea" class="textarea" rows="8" @input="countWords" />
-    <h1>{{ wordCount }} / 750 words</h1>
-    <h2>{{ parseFloat((wordCount / 750) * 100).toFixed(1) }} %</h2>
-    <b-progress class="progress" :value="wordCount" :max="750" height="2rem" />
+  <div class="container-fluid h-100 text-center">
+    <div class="d-flex h-100 py-3 flex-column">
+      <textarea
+        ref="textarea"
+        rows="100"
+        class="textarea mb-auto"
+        :style="{ fontSize: fontSize + 'px' }"
+        @input="countWords"
+        @blur="focusArea"
+      />
+      <div class="mt-auto pt-3">
+        <div class="row">
+          <h2 class="col text-left">{{ wordCount }} / 750 words</h2>
+          <h2 class="col text-right">
+            {{ parseFloat((wordCount / 750) * 100).toFixed(1) }} %
+          </h2>
+        </div>
+        <b-progress
+          class="progress"
+          :value="wordCount"
+          :max="750"
+          height="2rem"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -18,9 +37,32 @@ export default {
     };
   },
 
+  computed: {
+    fontSize() {
+      return 18;
+    },
+  },
+
+  mounted() {
+    this.focusArea();
+  },
+
   methods: {
+    focusArea() {
+      this.$refs.textarea.focus();
+    },
+
+    map(value, in_min, in_max, out_min, out_max) {
+      return (
+        ((value - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
+      );
+    },
+
     countWords() {
-      this.wordCount = this.$refs.textarea.value.trim().split(" ").length;
+      this.wordCount = this.$refs.textarea.value
+        .trim()
+        .split(" ")
+        .filter((v) => v !== "").length;
     },
   },
 };
