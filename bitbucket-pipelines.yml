@@ -9,8 +9,7 @@ pipelines:
     - step:
         name: 'Build and Test'
         script:
-          - npm install
-          - npm run build
+          - echo "build and test here..."
     - step:
         name: 'Deployment to Staging'
         deployment: staging
