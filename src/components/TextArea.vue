@@ -42,6 +42,11 @@
 <script>
 import { VNumber } from "@maxflex/v-number";
 
+// TODO:
+// * Clean up code
+// * disable spell check
+// * Finish
+
 export default {
   name: "TextArea",
 
