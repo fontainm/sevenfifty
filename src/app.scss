@@ -1,11 +1,24 @@
 $body-bg: #222;
-$body-color: #eeeeee;
+$body-color: #f0f0f0;
 
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 @import "node_modules/bootstrap-vue/src/index.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=auto");
 
-html, body {
+html,
+body {
+  font-family: "Roboto Slab";
   height: 100%;
+}
+
+.intro {
+  position: absolute;
+  top: calc(50% - 120px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  width: 100%;
+  opacity: 0.4;
 }
 
 .textarea {
@@ -24,4 +37,16 @@ html, body {
 .progress-bar {
   // background: linear-gradient(90deg, rgba(119,224,28,1) 0%, rgba(0,226,255,1) 100%);
   background-color: slategray;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 4s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
