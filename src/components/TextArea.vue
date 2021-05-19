@@ -70,7 +70,7 @@ export default {
 
   watch: {
     wordCount() {
-      this.finished = this.wordCount >= 10;
+      this.finished = this.wordCount >= 750;
     },
   },
 
