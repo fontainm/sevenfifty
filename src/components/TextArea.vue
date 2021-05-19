@@ -3,7 +3,7 @@
     <div class="d-flex h-100 py-3 flex-column">
       <transition name="fade">
         <div v-show="showIntro" class="intro">
-          Type what's on your mind...
+          {{ introText }}
         </div>
       </transition>
       <textarea
@@ -15,19 +15,22 @@
         @blur="focusArea"
       />
       <div class="mt-auto pt-3">
-        <div class="row">
+        <div class="row text">
           <h2 class="col-7 text-left">
-            <span>
-              <v-number :speed="200" v-model="wordCount"></v-number>
-              / 750 words
-            </span>
+            <v-number :speed="200" v-model="wordCount"></v-number>
+            <span> / 750 words </span>
           </h2>
           <h2 class="col-5 text-right">
             <v-number :speed="200" v-model="wordPercentage"></v-number>
             %
           </h2>
         </div>
-        <b-progress class="progress" :value="wordCount" :max="750" height="2rem" />
+        <b-progress
+          class="progress"
+          :value="wordCount"
+          :max="750"
+          height="2rem"
+        />
       </div>
     </div>
   </div>
@@ -46,7 +49,18 @@ export default {
   data() {
     return {
       wordCount: 0,
+      introText: '',
       showIntro: true,
+      introTexts: [
+        "Type what's on your mind...",
+        "Type away...",
+        "Let's get typing...",
+        "A blank space for your thoughts...",
+        "Hit that keyboard...",
+        "A penny for your thoughts...",
+        "750 words to go...",
+        ":)"
+      ]
     };
   },
 
@@ -62,6 +76,7 @@ export default {
 
   mounted() {
     this.focusArea();
+    this.introText = this.introTexts[Math.floor(Math.random() * this.introTexts.length)];
   },
 
   methods: {
@@ -70,7 +85,9 @@ export default {
     },
 
     map(value, in_min, in_max, out_min, out_max) {
-      return ((value - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+      return (
+        ((value - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
+      );
     },
 
     countWords() {

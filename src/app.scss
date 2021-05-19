@@ -1,5 +1,5 @@
 $body-bg: #222;
-$body-color: #f0f0f0;
+$body-color: #eee;
 
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 @import "node_modules/bootstrap-vue/src/index.scss";
@@ -9,6 +9,7 @@ html,
 body {
   font-family: "Roboto Slab";
   height: 100%;
+  background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(30,36,45,1) 90%);
 }
 
 .intro {
@@ -18,7 +19,7 @@ body {
   transform: translate(-50%, -50%);
   font-size: 2rem;
   width: 100%;
-  opacity: 0.4;
+  opacity: 0.5;
   padding: 0 1rem;
 
   @media (min-width: 768px) {
@@ -28,7 +29,7 @@ body {
 
 .textarea {
   width: 100%;
-  background-color: $body-bg;
+  background-color: transparent;
   color: $body-color;
   border: none;
   outline: none;
@@ -37,18 +38,19 @@ body {
 
 .progress {
   margin-top: 1rem;
+  background-color: rgba(10,10,10,1);
+  border: 1px solid $body-color;
+  border-radius: 5px;
 }
 
 .progress-bar {
   // background: linear-gradient(90deg, rgba(119,224,28,1) 0%, rgba(0,226,255,1) 100%);
-  background-color: slategray;
+  background-color: $body-color;
+  border-radius: 5px;
 }
 
-h2 {
-  font-size: 1.5rem;
-  @media (min-width: 768px) {
-    font-size: 2.5rem;
-  }
+.v-number {
+  top: 8px;
 }
 
 .fade-enter-active,
