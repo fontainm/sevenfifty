@@ -16,11 +16,11 @@
       />
       <div class="mt-auto pt-3">
         <div class="row text">
-          <h2 class="col-7 text-left">
+          <h2 class="col-8 text-left">
             <v-number :speed="200" v-model="wordCount"></v-number>
             <span> / 750 words </span>
           </h2>
-          <h2 class="col-5 text-right">
+          <h2 class="col-4 text-right">
             <v-number :speed="200" v-model="wordPercentage"></v-number>
             %
           </h2>
