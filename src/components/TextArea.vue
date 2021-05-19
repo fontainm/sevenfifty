@@ -16,8 +16,16 @@
       />
       <div class="mt-auto pt-3">
         <div class="row">
-          <h2 class="col-7 text-left">{{ wordCount }} / 750 words</h2>
-          <h2 class="col-5 text-right">{{ parseFloat((wordCount / 750) * 100).toFixed(1) }} %</h2>
+          <h2 class="col-7 text-left">
+            <span>
+              <v-number :speed="200" v-model="wordCount"></v-number>
+              / 750 words
+            </span>
+          </h2>
+          <h2 class="col-5 text-right">
+            <v-number :speed="200" v-model="wordPercentage"></v-number>
+            %
+          </h2>
         </div>
         <b-progress class="progress" :value="wordCount" :max="750" height="2rem" />
       </div>
@@ -26,8 +34,14 @@
 </template>
 
 <script>
+import { VNumber } from "@maxflex/v-number";
+
 export default {
   name: "TextArea",
+
+  components: {
+    VNumber,
+  },
 
   data() {
     return {
@@ -39,6 +53,10 @@ export default {
   computed: {
     fontSize() {
       return 18;
+    },
+
+    wordPercentage() {
+      return parseFloat((this.wordCount / 750) * 100).toFixed(1);
     },
   },
 
