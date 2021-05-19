@@ -27,6 +27,16 @@ body {
   }
 }
 
+.finish {
+  position: absolute;
+  top: calc(50% - 120px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
 .textarea {
   width: 100%;
   background-color: transparent;

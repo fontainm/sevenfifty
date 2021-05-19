@@ -6,6 +6,9 @@
           {{ introText }}
         </div>
       </transition>
+      <transition name="fade">
+        <div v-show="finished" class="finish">🌟</div>
+      </transition>
       <textarea
         ref="textarea"
         rows="100"
@@ -49,8 +52,9 @@ export default {
   data() {
     return {
       wordCount: 0,
-      introText: '',
+      introText: "",
       showIntro: true,
+      finished: false,
       introTexts: [
         "Type what's on your mind...",
         "Type away...",
@@ -59,9 +63,15 @@ export default {
         "Hit that keyboard...",
         "A penny for your thoughts...",
         "750 words to go...",
-        ":)"
-      ]
+        ":)",
+      ],
     };
+  },
+
+  watch: {
+    wordCount() {
+      this.finished = this.wordCount >= 10;
+    },
   },
 
   computed: {
@@ -76,7 +86,9 @@ export default {
 
   mounted() {
     this.focusArea();
-    this.introText = this.introTexts[Math.floor(Math.random() * this.introTexts.length)];
+    this.introText = this.introTexts[
+      Math.floor(Math.random() * this.introTexts.length)
+    ];
   },
 
   methods: {
