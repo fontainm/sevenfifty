@@ -1,5 +1,7 @@
 <template>
-  <TextArea />
+  <div class="container-fluid h-100 text-center">
+    <TextArea />
+  </div>
 </template>
 
 <script>
