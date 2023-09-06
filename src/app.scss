@@ -78,6 +78,27 @@ h2 {
   }
 }
 
+.github {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+
+  &:hover {
+    svg {
+      opacity: 1;
+    }
+  }
+
+  svg {
+    fill: #eee;
+    opacity: 0.5;
+    transition: all 0.4s ease;
+    transform: scale(0.4);
+    transform-origin: top right;
+  }
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 4s;
