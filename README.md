@@ -1,24 +1,5 @@
-# seven-fifty
+# SEVENFIFTY
 
-## Project setup
-```
-npm install
-```
+[Start writing](https://www.mathiasfontain.at/sevenfifty)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Writing 750 each day can improve your mental health. Get it all out of your system, just type what's on your mind.
